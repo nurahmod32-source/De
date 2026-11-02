@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Deals</title>
+<style>
+
+:root{--bg:#f5f7ff;--panel:#fff;--panel2:#f7f8ff;--gold:#ffd23f;--text:#10244a;--muted:#64748b;--line:#dce5f4;--green:#10b981;--red:#ef476f;--blue:#2477ff;--purple:#7c3aed;--orange:#f97316}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f4f7ff 0%,#fff 65%,#f7f4ff 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+header{border-bottom:1px solid #dce5f4;background:linear-gradient(105deg,#071b3c,#123d70 65%,#38217a);position:sticky;top:0;backdrop-filter:blur(12px);z-index:5}.nav{max-width:1120px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-size:1.25rem;font-weight:950;letter-spacing:-.4px;color:#fff}.brand span{color:#ffd23f}.nav button,.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;cursor:pointer;transition:transform .18s,box-shadow .18s}.nav button{background:linear-gradient(135deg,#ffe56d,#ffbf18);color:#142341;box-shadow:0 5px 14px #ffc10740}.nav button:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #17255420}
+main{max-width:1120px;margin:auto;padding:32px 20px 65px}.hero{position:relative;overflow:hidden;padding:42px 34px 38px;border-radius:26px;background:linear-gradient(115deg,#071b3c 0%,#164e91 56%,#7736b7 100%);color:#fff;box-shadow:0 18px 45px #173c7829}.hero:after{content:"✦";position:absolute;right:7%;top:8%;font-size:9rem;color:#ffffff12;line-height:1}.eyebrow{color:#ffda4d;text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:900}.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.04;margin:14px 0;letter-spacing:-1.5px}.hero h1 span{color:#ffd23f}.hero p{color:#e1edff;font-size:1.08rem;max-width:650px}.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.pill{border:1px solid #ffffff40;border-radius:999px;padding:7px 12px;color:#f1f6ff;font-size:.88rem;background:#ffffff0b}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 10px 28px #263b6810}.card h2,.card h3{margin-top:0}.icon{font-size:1.8rem}.muted{color:var(--muted)}label{display:block;font-size:.9rem;font-weight:750;margin:13px 0 6px}input,select,textarea{width:100%;border:1px solid #d5dfef;background:#fbfcff;color:#142341;padding:12px;border-radius:11px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:#7c3aed;box-shadow:0 0 0 3px #7c3aed18}textarea{min-height:105px;resize:vertical}.btn{background:linear-gradient(135deg,#ffdf4f,#ffb91d);color:#142341;margin-top:14px}.btn.secondary{background:#eaf0ff;color:#173e80;border:1px solid #d4e0fa}.btn.danger{background:#ffe8ed;color:#b42345;border:1px solid #ffcbd5}.btn.small{padding:8px 10px;margin:4px 5px 0 0;font-size:.84rem}.form-card{margin-top:22px}.form-card h2{margin-bottom:5px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.full{grid-column:1/-1}.notice{border:1px solid #f3d58c;background:#fff8df;color:#765312;padding:13px 15px;border-radius:12px;margin:18px 0;font-size:.9rem}.hidden{display:none!important}.section-title{margin:42px 0 18px}.section-title h2{margin-bottom:5px}.admin-wrap{margin-top:35px}.admin-panel{background:#fff;border:1px solid #dce5f4;border-radius:20px;padding:22px;margin-top:16px;box-shadow:0 12px 30px #263b680c}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{background:linear-gradient(135deg,#eef5ff,#f4edff);border:1px solid #e2e8fa;border-radius:14px;padding:15px}.stat strong{font-size:1.6rem;display:block;color:#6337d8}.application{border:1px solid var(--line);border-radius:15px;padding:16px;margin:12px 0;background:#fcfdff}.application-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.tag{font-size:.78rem;padding:4px 8px;border-radius:999px;background:#e8efff;color:#254b91}.tag.Pending{background:#fff1c2;color:#885b00}.tag.Accepted{background:#d8faeb;color:#08794f}.tag.Rejected{background:#ffe2e8;color:#b42345}.tag.Replied{background:#e9ddff;color:#6429bd}.replybox{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.reply{white-space:pre-wrap;background:#f3f6fc;border-radius:10px;padding:12px;margin-top:8px}.empty{text-align:center;padding:25px;color:var(--muted)}footer{background:linear-gradient(105deg,#071b3c,#123d70 65%,#38217a);padding:24px 20px;text-align:center;color:#d8e5fb;font-size:.9rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.hero{padding:30px 23px}.stats{grid-template-columns:1fr 1fr}}@media(max-width:420px){.nav{padding:13px}.brand{font-size:1rem}.stats{grid-template-columns:1fr}}
+
+
+/* Extra polish */
+html{scroll-behavior:smooth}::selection{background:#d9c7ff;color:#18213b}
+.card,.admin-panel{transition:transform .2s,box-shadow .2s}
+.card:hover{box-shadow:0 16px 36px #263b6818}
+.application{box-shadow:0 5px 18px #263b6808}
+#trackResult{margin-top:14px}.track-answer{border:1px solid #d8e5fa;background:linear-gradient(135deg,#f5f9ff,#fbf7ff);border-radius:14px;padding:16px;margin-top:12px}
+.hero{isolation:isolate}.hero:before{content:"";position:absolute;width:270px;height:270px;border-radius:50%;right:-85px;bottom:-140px;background:#ffffff12;filter:blur(2px);z-index:-1}
+@media(max-width:600px){main{padding:22px 14px 45px}.card{padding:18px}.nav button{padding:10px 12px;font-size:.82rem}.hero h1{letter-spacing:-.8px}}
+
+</head>
+<body>
+<header><div class="nav"><div class="brand">Business <span>Deals</span></div><button onclick="document.getElementById('submit').scrollIntoView({behavior:'smooth'})">Submit an Application ↗</button></div></header>
+<main>
+<section class="hero">
+<div class="eyebrow">Ideas • Opportunities • Growth</div>
+<h1>Make your next move<br>with <span>200IQ.</span></h1>
+<p>চাকরির আবেদন, নতুন ব্যবসার আইডিয়া এবং ব্যবসায়িক ডিল—সব এক জায়গায় জমা দিন। আপনার প্রস্তাব আমরা পর্যালোচনা করব।</p>
+<div class="pills"><span class="pill">✓ Job Applications</span><span class="pill">✦ Business Ideas</span><span class="pill">↗ Business Deals</span></div>
+</section>
+<section class="grid">
+<div class="card" style="background:linear-gradient(145deg,#eff6ff,#fff);border-color:#c8ddff"><div class="icon">💼</div><h2>Apply for a Job</h2><p class="muted">আপনার দক্ষতা ও যোগাযোগের তথ্য দিয়ে চাকরির আবেদন জমা দিন।</p></div>
+<div class="card" style="background:linear-gradient(145deg,#e9fff4,#fff);border-color:#b8f0d3"><div class="icon">💡</div><h2>Share an Idea</h2><p class="muted">আপনার নতুন ব্যবসার আইডিয়া আমাদের সঙ্গে শেয়ার করুন।</p></div>
+<div class="card" style="background:linear-gradient(145deg,#fff2e8,#fff);border-color:#ffd5b8"><div class="icon">🤝</div><h2>Business Deals</h2><p class="muted">পার্টনারশিপ, বিনিয়োগের প্রস্তাব বা ব্যবসায়িক অফার পাঠান।</p></div>
+</section>
+<section id="submit" class="card form-card">
+<h2>Submit your application</h2><p class="muted">সব ঘর সঠিকভাবে পূরণ করুন। * চিহ্নিত ঘরগুলো আবশ্যক।</p>
+<form id="applicationForm"><div class="form-grid">
+<div><label for="type">Application type *</label><select id="type" required><option value="Job Application">Job Application</option><option value="Business Idea">Business Idea</option><option value="Business Deal">Business Deal</option></select></div>
+<div><label for="name">Full name *</label><input id="name" required maxlength="100" placeholder="Your name"></div>
+<div><label for="email">Email *</label><input id="email" type="email" required maxlength="150" placeholder="you@example.com"></div>
+<div><label for="phone">Phone / WhatsApp</label><input id="phone" maxlength="40" placeholder="+880..."></div>
+<div class="full"><label for="subject">Title / Position / Deal name *</label><input id="subject" required maxlength="160" placeholder="What are you applying for?"></div>
+<div class="full"><label for="details">Details *</label><textarea id="details" required maxlength="5000" placeholder="Write your application, idea or deal proposal..."></textarea></div>
+</div><button class="btn" type="submit">Submit application →</button><p id="formMessage" role="status" class="muted"></p></form>
+</section>
+
+<section class="card form-card" id="track">
+  <h2>Track your application</h2>
+  <p class="muted">আবেদন জমা দেওয়ার পর পাওয়া রেফারেন্স কোড দিয়ে আপনার আবেদন ও অ্যাডমিনের উত্তর দেখুন।</p>
+  <form id="trackForm">
+    <label for="trackCode">Reference code</label>
+    <input id="trackCode" required maxlength="8" placeholder="যেমন: A1B2C3D4" autocomplete="off">
+    <button class="btn secondary" type="submit">Check application →</button>
+    <p id="trackMessage" class="muted" role="status"></p>
+  </form>
+  <div id="trackResult" class="hidden"></div>
+</section>
+
+<section class="admin-wrap" id="admin">
+<div class="section-title"><div class="eyebrow">Private workspace</div><h2>Admin dashboard</h2><p class="muted">শুধু অ্যাডমিন হিসেবে লগইন করে জমা দেওয়া আবেদন দেখুন ও উত্তর দিন।</p></div>
+<div id="loginCard" class="card"><h3>🔐 Admin login</h3><form id="loginForm"><label for="password">Admin password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Enter admin password"><button class="btn" type="submit">Unlock dashboard</button><p id="loginMessage" role="status" class="muted"></p></form></div>
+<div id="dashboard" class="admin-panel hidden"><div class="application-top"><div><h3>All submissions</h3><p class="muted">Review applications and send a reply or update the status.</p></div><button class="btn secondary" id="logoutBtn">Log out</button></div>
+<div class="stats"><div class="stat"><span class="muted">Total</span><strong id="totalCount">0</strong></div><div class="stat"><span class="muted">Pending</span><strong id="pendingCount">0</strong></div><div class="stat"><span class="muted">Replied</span><strong id="repliedCount">0</strong></div></div>
+<div class="form-grid"><div><label for="filterType">Filter by type</label><select id="filterType"><option value="All">All types</option><option>Job Application</option><option>Business Idea</option><option>Business Deal</option></select></div><div><label for="filterStatus">Filter by status</label><select id="filterStatus"><option value="All">All statuses</option><option>Pending</option><option>Accepted</option><option>Rejected</option><option>Replied</option></select></div></div>
+<div id="applicationList"></div>
+</div>
+<div class="notice">Demo & privacy note: গুরুত্বপূর্ণ: এই HTML ডেমোতে তথ্য শুধু একই ব্রাউজারের localStorage-এ থাকে। অন্য ডিভাইস/ব্রাউজার থেকে সব আবেদন দেখা যাবে না; আবেদনকারীও নিজের ডিভাইসে জমা দেওয়া কোডে উত্তর দেখতে পারবেন। পাবলিক/লাইভ সাইটে সবার আবেদন এক জায়গায় পেতে Firebase/Supabase বা নিজস্ব backend + database, server-side authentication ও access rules লাগবে। এখানে থাকা পাসওয়ার্ডটি demo-only; production-এ ব্যবহার করবেন না।</div>
+</section>
+</main>
+<footer>© <span id="year"></span> Business Deals · Ideas, Jobs & Opportunities</footer>
+<script>
+const DB_KEY='bd200iq_applications_v1';
+const ADMIN_PASSWORD='221133'; // Demo only. Never use a client-side password for a production admin account.
+const $=id=>document.getElementById(id);
+const getApps=()=>{try{return JSON.parse(localStorage.getItem(DB_KEY)||'[]')}catch(e){return []}};
+const saveApps=apps=>localStorage.setItem(DB_KEY,JSON.stringify(apps));
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$('year').textContent=new Date().getFullYear();
+$('applicationForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const app={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),type:$('type').value,name:$('name').value.trim(),email:$('email').value.trim(),phone:$('phone').value.trim(),subject:$('subject').value.trim(),details:$('details').value.trim(),status:'Pending',reply:'',createdAt:new Date().toISOString()};
+ if(!app.name||!app.email||!app.subject||!app.details)return;
+ const apps=getApps();apps.unshift(app);saveApps(apps);
+ $('applicationForm').reset();$('formMessage').innerHTML='আবেদন জমা হয়েছে! আপনার রেফারেন্স কোড: <strong>'+escapeHTML(app.id.slice(0,8).toUpperCase())+'</strong> — কোডটি সংরক্ষণ করুন। একই ব্রাউজারে আবেদনটি রাখা হয়েছে।';
+  $('trackCode').value=app.id.slice(0,8).toUpperCase();
+});
+
+$('trackForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const code=$('trackCode').value.trim().toUpperCase();
+ const found=getApps().find(a=>String(a.id).slice(0,8).toUpperCase()===code);
+ const result=$('trackResult'); result.classList.remove('hidden');
+ if(!found){result.innerHTML='<div class="track-answer">এই কোডে কোনো আবেদন পাওয়া যায়নি। কোডটি ঠিক আছে কি না দেখুন।</div>';return}
+ result.innerHTML=`<div class="track-answer">
+   <span class="tag ${escapeHTML(found.status)}">${escapeHTML(found.status)}</span>
+   <h3>${escapeHTML(found.subject)}</h3>
+   <p><strong>ধরন:</strong> ${escapeHTML(found.type)}<br><strong>জমা:</strong> ${new Date(found.createdAt).toLocaleString()}</p>
+   <p><strong>আপনার আবেদন:</strong><br>${escapeHTML(found.details)}</p>
+   <p><strong>অ্যাডমিনের উত্তর:</strong></p>
+   <div class="reply">${found.reply?escapeHTML(found.reply):'এখনো কোনো উত্তর দেওয়া হয়নি।'}</div>
+ </div>`;
+});
+
+let loggedIn=false;
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('password').value===ADMIN_PASSWORD){loggedIn=true;$('loginCard').classList.add('hidden');$('dashboard').classList.remove('hidden');$('loginMessage').textContent='';$('password').value='';renderApps()}else{$('loginMessage').textContent='Password ভুল হয়েছে। আবার চেষ্টা করুন।'}});
+$('logoutBtn').addEventListener('click',()=>{loggedIn=false;$('dashboard').classList.add('hidden');$('loginCard').classList.remove('hidden')});
+$('filterType').addEventListener('change',renderApps);$('filterStatus').addEventListener('change',renderApps);
+function renderApps(){
+ if(!loggedIn)return;
+ const all=getApps();$('totalCount').textContent=all.length;$('pendingCount').textContent=all.filter(a=>a.status==='Pending').length;$('repliedCount').textContent=all.filter(a=>a.reply.trim()).length;
+ const filtered=all.filter(a=>($('filterType').value==='All'||a.type===$('filterType').value)&&($('filterStatus').value==='All'||a.status===$('filterStatus').value));
+ if(!filtered.length){$('applicationList').innerHTML='<div class="empty">No applications yet. New submissions will appear here in this browser.</div>';return}
+ $('applicationList').innerHTML=filtered.map(a=>`<article class="application">
+ <div class="application-top"><div><span class="tag">${escapeHTML(a.type)}</span> <span class="tag ${escapeHTML(a.status)}">${escapeHTML(a.status)}</span><h3>${escapeHTML(a.subject)}</h3></div><small class="muted">${new Date(a.createdAt).toLocaleString()}</small></div>
+ <p><strong>${escapeHTML(a.name)}</strong> · <a href="mailto:${escapeHTML(a.email)}" style="color:#f5c451">${escapeHTML(a.email)}</a>${a.phone?' · '+escapeHTML(a.phone):''}</p>
+ <p style="white-space:pre-wrap">${escapeHTML(a.details)}</p>
+ <div class="replybox"><label for="reply-${a.id}">Your reply</label><textarea id="reply-${a.id}" maxlength="5000" placeholder="Write a response to the applicant...">${escapeHTML(a.reply)}</textarea>
+ <label for="status-${a.id}">Status</label><select id="status-${a.id}"><option ${a.status==='Pending'?'selected':''}>Pending</option><option ${a.status==='Accepted'?'selected':''}>Accepted</option><option ${a.status==='Rejected'?'selected':''}>Rejected</option><option ${a.status==='Replied'?'selected':''}>Replied</option></select>
+ <button class="btn small" onclick="saveReply('${a.id}')">Save reply & status</button><button class="btn small danger" onclick="deleteApp('${a.id}')">Delete</button>
+ ${a.reply?'<div class="reply"><strong>Saved reply:</strong><br>'+escapeHTML(a.reply)+'</div>':''}</div></article>`).join('');
+}
+function saveReply(id){if(!loggedIn)return;const apps=getApps();const a=apps.find(x=>x.id===id);if(!a)return;a.reply=$('reply-'+id).value.trim();a.status=$('status-'+id).value;if(a.reply&&a.status==='Pending')a.status='Replied';saveApps(apps);renderApps()}
+function deleteApp(id){if(!loggedIn||!confirm('এই আবেদনটি মুছে ফেলবেন?'))return;saveApps(getApps().filter(a=>a.id!==id));renderApps()}
+</script>
+</body>
+</html>
